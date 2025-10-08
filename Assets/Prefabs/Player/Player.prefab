@@ -376,6 +376,9 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 11264
+  _scriptAnim: {fileID: 0}
+  audioSource: {fileID: 0}
+  WalkSounds: {fileID: 0}
   IsUse_Movement: 0
   isRunning: 0
 --- !u!1 &1342498753015668652
@@ -1316,7 +1319,7 @@ MeshRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 6
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
