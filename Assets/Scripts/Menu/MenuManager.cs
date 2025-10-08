@@ -9,7 +9,7 @@ public class MenuManager : MonoBehaviour
 
 
 
-    [SerializeField] GameObject Settings;
+    [SerializeField] GameObject GameMenu;
 
     bool IsGame = false;
 
@@ -51,7 +51,7 @@ public class MenuManager : MonoBehaviour
     {
         if (IsGame && Input.GetKeyDown(KeyCode.Escape))
         {
-            Settings.SetActive(!Settings.activeSelf);
+            GameMenu.SetActive(!GameMenu.activeSelf);
         }
     }
 }
