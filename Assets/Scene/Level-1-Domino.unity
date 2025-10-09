@@ -2079,7 +2079,7 @@ GameObject:
   - component: {fileID: 180007598}
   - component: {fileID: 180007600}
   - component: {fileID: 180007599}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Point Light (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2178,7 +2178,7 @@ MonoBehaviour:
   m_EvsmLightLeakBias: 0
   m_EvsmVarianceBias: 0.00001
   m_EvsmBlurPasses: 0
-  m_LightlayersMask: 2
+  m_LightlayersMask: 4
   m_LinkShadowLayers: 1
   m_ShadowNearPlane: 0.1
   m_BlockerSampleCount: 24
@@ -2292,7 +2292,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingLayerMask: 2
+  m_RenderingLayerMask: 4
   m_Lightmapping: 4
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 0.5, y: 0.5}
@@ -13780,7 +13780,7 @@ Transform:
   m_GameObject: {fileID: 1115172538}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.15, y: 540.51, z: -402.45}
+  m_LocalPosition: {x: 0, y: 0.57, z: -5.725}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13875,7 +13875,7 @@ MonoBehaviour:
   m_InnerSpotPercent: 0
   m_SpotIESCutoffPercent: 100
   m_LightDimmer: 1
-  m_VolumetricDimmer: 1
+  m_VolumetricDimmer: 0.3
   m_FadeDistance: 10000
   m_VolumetricFadeDistance: 0
   m_AffectDiffuse: 1
@@ -14007,7 +14007,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 0.7780799, b: 0.3915094, a: 1}
   m_Intensity: 2148.5916
-  m_Range: 3.5
+  m_Range: 4.9643545
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -15179,6 +15179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1272555375}
+  - component: {fileID: 1272555376}
   m_Layer: 0
   m_Name: Task3_Trigger
   m_TagString: Untagged
@@ -15195,12 +15196,33 @@ Transform:
   m_GameObject: {fileID: 1272555374}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 21.597, y: 1.348, z: -62.557}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2023428304}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1272555376
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272555374}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.232666, y: 5.288431, z: 5.288431}
+  m_Center: {x: 0.5, y: 0, z: 0}
 --- !u!4 &1284288428 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1462190939609231855, guid: 36c80d5ec432efe428400e5be5e8d3d3, type: 3}
@@ -17458,7 +17480,7 @@ GameObject:
   - component: {fileID: 1436217748}
   - component: {fileID: 1436217750}
   - component: {fileID: 1436217749}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Point Light (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17557,7 +17579,7 @@ MonoBehaviour:
   m_EvsmLightLeakBias: 0
   m_EvsmVarianceBias: 0.00001
   m_EvsmBlurPasses: 0
-  m_LightlayersMask: 2
+  m_LightlayersMask: 4
   m_LinkShadowLayers: 1
   m_ShadowNearPlane: 0.1
   m_BlockerSampleCount: 24
@@ -17671,7 +17693,7 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingLayerMask: 2
+  m_RenderingLayerMask: 4
   m_Lightmapping: 4
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 0.5, y: 0.5}
@@ -23020,6 +23042,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1834742374}
+  - component: {fileID: 1834742375}
   m_Layer: 0
   m_Name: Task2_Trigger
   m_TagString: Untagged
@@ -23036,12 +23059,33 @@ Transform:
   m_GameObject: {fileID: 1834742373}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.21, y: 2.4, z: -63.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2023428304}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1834742375
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834742373}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9.23365, y: 6.7505074, z: 6.7505074}
+  m_Center: {x: -1.2415682, y: 0, z: 2.8752537}
 --- !u!4 &1836785267 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1539232848091419765, guid: e3dd6df4de418ad488cbc0567781acee, type: 3}
@@ -25193,7 +25237,7 @@ Transform:
   m_GameObject: {fileID: 2023428303}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.913176, y: -540.2656, z: 396.07858}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26104,6 +26148,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1783371743096167348, guid: ce277c08d70e020478d7558bc04cfd45, type: 3}
       propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2619713764881687918, guid: ce277c08d70e020478d7558bc04cfd45, type: 3}
+      propertyPath: m_text
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4522373474584731433, guid: ce277c08d70e020478d7558bc04cfd45, type: 3}
