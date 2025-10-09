@@ -54,6 +54,9 @@ MonoBehaviour:
   _a: {fileID: 0}
   _b: {fileID: 0}
   _c: {fileID: 0}
+  audioSource: {fileID: 0}
+  ChangeNumber: {fileID: 0}
+  OpenCodeLock: {fileID: 0}
 --- !u!1001 &4017872130563990507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -103,6 +106,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3323290168122336167, guid: 080e28a341bbf6543a2f943e0d210cbd, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3323290168122336167, guid: 080e28a341bbf6543a2f943e0d210cbd, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7e1cdd15bc5abbf428b70348485a30a9, type: 2}
@@ -111,13 +118,25 @@ PrefabInstance:
       value: SM_Lock_01 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 927483827038725020, guid: 080e28a341bbf6543a2f943e0d210cbd, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 927483827038725020, guid: 080e28a341bbf6543a2f943e0d210cbd, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7e1cdd15bc5abbf428b70348485a30a9, type: 2}
     - target: {fileID: 5905600536060159308, guid: 080e28a341bbf6543a2f943e0d210cbd, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5905600536060159308, guid: 080e28a341bbf6543a2f943e0d210cbd, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7e1cdd15bc5abbf428b70348485a30a9, type: 2}
+    - target: {fileID: 7192619865517655738, guid: 080e28a341bbf6543a2f943e0d210cbd, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7192619865517655738, guid: 080e28a341bbf6543a2f943e0d210cbd, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

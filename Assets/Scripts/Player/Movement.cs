@@ -18,15 +18,26 @@ public class Movement : MonoBehaviour
 
 
     [SerializeField] ScriptAnim _scriptAnim;
-    [SerializeField] AudioSource audioSource;
-    [SerializeField] AudioClip WalkSounds;
+
 
     public bool IsUse_Movement;
 
     bool _walk;
     public bool isRunning;
 
-   
+
+    //SFX
+
+    [SerializeField] private LayerMask groundMaskStone;
+    bool isGroundedStone;
+    [SerializeField] private LayerMask groundMaskWood;
+    bool isGroundedWood;
+
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip[] StoneWalkSoundsClips;
+    [SerializeField] AudioClip[] WoodWalkSoundsClips;
+
+    float stepTimer = 0;
 
     void Update()
     {
@@ -35,22 +46,18 @@ public class Movement : MonoBehaviour
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
+        isGroundedStone = Physics.CheckSphere(groundCheck.position, groundDistance, groundMaskStone);
+        isGroundedWood = Physics.CheckSphere(groundCheck.position, groundDistance, groundMaskWood);
+
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
+        _walk = (Mathf.Abs(x) > 0.2f || Mathf.Abs(z) > 0.2f);
 
-        if (x == 1 || z == 1)
-        {
-            _walk = true;
-        }
-        else
-        {
-            _walk = false;
-        }
-
+        
 
         if (x == 1 && Input.GetKey(KeyCode.LeftShift) || z == 1 && Input.GetKey(KeyCode.LeftShift) || x == -1 && Input.GetKey(KeyCode.LeftShift))
         {
@@ -108,8 +115,45 @@ public class Movement : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
 
-        
+        if (_walk && isGrounded)
+        {
+            stepTimer += Time.deltaTime;
+            if (stepTimer >= 0.5f && isGroundedStone)
+            {
+                PlayStoneFootstep();
+                stepTimer = 0; 
+
+            }
+            if (stepTimer >= 0.5f && isGroundedWood)
+            {
+                PlayWoodFootstep();
+                stepTimer = 0;
+
+            }
+        }
     }
 
-   
+    // SFX
+
+    void PlayStoneFootstep()
+    {
+        if (StoneWalkSoundsClips.Length > 0)
+        {
+            AudioClip randomClip = StoneWalkSoundsClips[Random.Range(0, StoneWalkSoundsClips.Length)];
+            audioSource.PlayOneShot(randomClip, 0.4f);
+        }
+    }
+
+    void PlayWoodFootstep()
+    {
+        if (WoodWalkSoundsClips.Length > 0)
+        {
+            AudioClip randomClip = WoodWalkSoundsClips[Random.Range(0, WoodWalkSoundsClips.Length)];
+            audioSource.PlayOneShot(randomClip, 0.4f);
+        }
+    }
+
+
+
+
 }

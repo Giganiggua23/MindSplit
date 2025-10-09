@@ -102,29 +102,157 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8278983893207766345, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTracingMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8278983893207766345, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTraceProcedural
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8278983893207766345, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8278983893207766345, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8278983893207766345, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTracingAccelStructBuildFlagsOverride
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -6064266451810492313, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -6064266451810492313, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4128105945835219204, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTracingMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4128105945835219204, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTraceProcedural
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4128105945835219204, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4128105945835219204, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4128105945835219204, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTracingAccelStructBuildFlagsOverride
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3712081221461946932, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTracingMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3712081221461946932, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTraceProcedural
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3712081221461946932, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3712081221461946932, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3712081221461946932, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTracingAccelStructBuildFlagsOverride
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -3455722040669075488, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: -3455722040669075488, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3433384184947870759, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTracingMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3433384184947870759, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTraceProcedural
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3433384184947870759, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3433384184947870759, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3433384184947870759, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTracingAccelStructBuildFlagsOverride
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -2284793555281594686, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -2284793555281594686, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -1017516397898704333, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: -1017516397898704333, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -898367482739782236, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: -898367482739782236, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 690005110995207775, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 690005110995207775, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 890579978534283834, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTracingMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 890579978534283834, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTraceProcedural
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 890579978534283834, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 890579978534283834, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 890579978534283834, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTracingAccelStructBuildFlagsOverride
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
       propertyPath: m_Name
@@ -134,21 +262,137 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1175868307434837472, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTracingMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1175868307434837472, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTraceProcedural
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1175868307434837472, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1175868307434837472, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1175868307434837472, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTracingAccelStructBuildFlagsOverride
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1983868427852734700, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983868427852734700, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105339222175381140, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTracingMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105339222175381140, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTraceProcedural
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105339222175381140, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105339222175381140, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105339222175381140, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTracingAccelStructBuildFlagsOverride
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874996159258342932, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTracingMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874996159258342932, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTraceProcedural
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874996159258342932, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874996159258342932, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2874996159258342932, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTracingAccelStructBuildFlagsOverride
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142345053529031671, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTracingMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142345053529031671, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTraceProcedural
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142345053529031671, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142345053529031671, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142345053529031671, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTracingAccelStructBuildFlagsOverride
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3940091460990035412, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3940091460990035412, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4969865518201064120, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 4969865518201064120, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5250278410117324941, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5250278410117324941, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945276012323944831, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTracingMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945276012323944831, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTraceProcedural
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945276012323944831, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945276012323944831, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8945276012323944831, guid: cef4fc59d69c4f941b9cd7664ea5ca1c, type: 3}
+      propertyPath: m_RayTracingAccelStructBuildFlagsOverride
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

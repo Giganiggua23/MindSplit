@@ -29,6 +29,15 @@ public class CodeLockLogic : MonoBehaviour
     [SerializeField] TMP_Text _b;
     [SerializeField] TMP_Text _c;
 
+
+
+    // SFX
+    [SerializeField] AudioSource audioSource;
+
+    [SerializeField] AudioClip ChangeNumber;
+    [SerializeField] AudioClip OpenCodeLock;
+
+
     void Start()
     {
         a = Random.Range(0, 9);
@@ -47,17 +56,19 @@ public class CodeLockLogic : MonoBehaviour
         if (isUseCodeLock)
         {
             // Прокрут 
-            if (Input.GetKeyDown(KeyCode.LeftArrow) && !isRotating)
+            if (Input.GetKeyDown(KeyCode.LeftArrow) && !isRotating && !ready)
             {
                 Code[CodeKey] -= 1;
                 targetRotations[CodeKey] -= 36f;
+                audioSource.PlayOneShot(ChangeNumber, 1f);
                 isRotating = true;
 
             }
-            if (Input.GetKeyDown(KeyCode.RightArrow) && !isRotating)
+            if (Input.GetKeyDown(KeyCode.RightArrow) && !isRotating && !ready)
             {
                 Code[CodeKey] += 1;
                 targetRotations[CodeKey] += 36f;
+                audioSource.PlayOneShot(ChangeNumber, 1f);
                 isRotating = true;
             }
 
@@ -122,6 +133,7 @@ public class CodeLockLogic : MonoBehaviour
         if (a == Code[0] && b == Code[1] && c == Code[2] && !ready)
         {
             _chestOpen.OpenChest();
+            audioSource.PlayOneShot(OpenCodeLock, 1f);
             ready = true;
         }
         
