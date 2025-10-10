@@ -55,7 +55,7 @@ public class Movement : MonoBehaviour
         }
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-        _walk = (Mathf.Abs(x) > 0.2f || Mathf.Abs(z) > 0.2f);
+        _walk = (Mathf.Abs(x) > 0.4f || Mathf.Abs(z) > 0.4f);
 
         
 

@@ -27,9 +27,8 @@ public class PlayerHealthPoint : MonoBehaviour
 
     void Death()
     {
-        Time.timeScale = 0;
-
-        //SceneManager.LoadScene(2);
+       //Time.timeScale = 0;
+        SceneManager.LoadScene(3);
     }
 
 

@@ -11,19 +11,22 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField] GameObject GameMenu;
 
-    bool IsGame = false;
+    [SerializeField] bool IsGame = false;
+    [SerializeField] bool IsDieMenu = false;
 
 
     void Start()
     {
         Credits.SetActive(false);
         YES.SetActive(false);
+        GameMenu.SetActive(false);
     }
 
 
     public void ButtonPlay()
     {
         SceneManager.LoadScene(1);
+        Time.timeScale = 1f;
     }
 
 
@@ -47,11 +50,35 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void ReturnToGame()
+    {
+        GameMenu.SetActive(!GameMenu.activeSelf);
+        if (GameMenu.activeSelf)
+        {
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+    }
+
+
     void Update()
     {
         if (IsGame && Input.GetKeyDown(KeyCode.Escape))
         {
-            GameMenu.SetActive(!GameMenu.activeSelf);
+            ReturnToGame();
+        }
+            
+
+        if (IsDieMenu && Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }

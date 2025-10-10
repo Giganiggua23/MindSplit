@@ -11,10 +11,11 @@ public class MouseLock : MonoBehaviour
 
     private float xRotation = 0f;
 
+    [SerializeField] GameObject EscapeMenu;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-
     }
 
     void Update()
