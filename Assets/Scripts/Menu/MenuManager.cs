@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    
+    [SerializeField] GameObject Settings;
     [SerializeField] GameObject Credits;
     [SerializeField] GameObject YES;
 
@@ -17,9 +17,17 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
-        Credits.SetActive(false);
-        YES.SetActive(false);
-        GameMenu.SetActive(false);
+        if (Settings != null)
+            Settings.SetActive(false);
+
+        if (Credits != null)
+            Credits.SetActive(false);
+
+        if (YES != null)
+            YES.SetActive(false);
+
+        if (GameMenu != null)
+            GameMenu.SetActive(false);
     }
 
 
@@ -29,6 +37,10 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public void ButtonSettings()
+    {
+        Settings.SetActive(!Settings.activeSelf);
+    }
 
     public void ButtonCredits()
     {
@@ -79,6 +91,8 @@ public class MenuManager : MonoBehaviour
         if (IsDieMenu && Input.GetKeyDown(KeyCode.Space))
         {
             SceneManager.LoadScene(0);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 }
