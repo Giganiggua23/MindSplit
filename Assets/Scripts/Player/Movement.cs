@@ -118,7 +118,7 @@ public class Movement : MonoBehaviour
         if (_walk && isGrounded)
         {
             stepTimer += Time.deltaTime;
-            if (stepTimer >= 0.5f && isGroundedStone)
+            if (stepTimer >= 0.45f && isGroundedStone)
             {
                 PlayStoneFootstep();
                 stepTimer = 0; 
@@ -140,7 +140,7 @@ public class Movement : MonoBehaviour
         if (StoneWalkSoundsClips.Length > 0)
         {
             AudioClip randomClip = StoneWalkSoundsClips[Random.Range(0, StoneWalkSoundsClips.Length)];
-            audioSource.PlayOneShot(randomClip, 0.4f);
+            audioSource.PlayOneShot(randomClip, 0.3f);
         }
     }
 
@@ -149,7 +149,7 @@ public class Movement : MonoBehaviour
         if (WoodWalkSoundsClips.Length > 0)
         {
             AudioClip randomClip = WoodWalkSoundsClips[Random.Range(0, WoodWalkSoundsClips.Length)];
-            audioSource.PlayOneShot(randomClip, 0.4f);
+            audioSource.PlayOneShot(randomClip, 0.35f);
         }
     }
 
