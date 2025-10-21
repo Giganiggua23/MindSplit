@@ -27,12 +27,12 @@ public class DraggableItem : MonoBehaviour
             isGrabbed = !isGrabbed;
             if (isGrabbed && rb != null)
             {
-                rb.isKinematic = true;
+                //rb.isKinematic = true;
                 _mouseLock._isUse_Camera = true;
             }
             else if (rb != null)
             {
-                rb.isKinematic = false;
+                //rb.isKinematic = false;
                 _mouseLock._isUse_Camera = false;
             }
         }
