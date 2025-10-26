@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class DragItem : MonoBehaviour
 {
-    [SerializeField] private float pickUpRadius = 0.5f;       // Радиус подьёма 
-    [SerializeField] private LayerMask playerLayer = 1;       // Слой 
-    [SerializeField] private Transform holdPoint;             // Точка установки 
-    [SerializeField] private float pickUpSmoothTime = 0.2f;   // Время подтяжки
+    [SerializeField] private float pickUpRadius = 0.5f;
+    [SerializeField] private LayerMask playerLayer = 1;
+    [SerializeField] private Transform holdPoint;
+    [SerializeField] private float pickUpSmoothTime = 0.2f;
+    [SerializeField] private SpecificMaterialChanger _VXMaterial;
+
 
     private bool isDragged = false;
     private Transform playerTransform;
@@ -17,6 +19,10 @@ public class DragItem : MonoBehaviour
     private float timer = 0f;
     private const float RELEASE_DELAY = 10f;
 
+    // Для определения наведения
+    private bool isHovered = false;
+    private Collider[] hoverResults = new Collider[1]; // Оптимизация для OverlapSphereNonAlloc
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -24,6 +30,7 @@ public class DragItem : MonoBehaviour
 
     void Update()
     {
+        CheckForHover(); // Проверяем наведение каждый кадр
         CheckForPickUpInput();
 
         if (isDragged)
@@ -47,9 +54,43 @@ public class DragItem : MonoBehaviour
         }
     }
 
+    void CheckForHover()
+    {
+        bool wasHovered = isHovered;
+
+        // Проверяем есть ли игрок в радиусе
+        int playersCount = Physics.OverlapSphereNonAlloc(transform.position, pickUpRadius, hoverResults, playerLayer);
+        isHovered = playersCount > 0;
+
+        // Вызываем события при изменении состояния наведения
+        if (isHovered && !wasHovered)
+        {
+            OnHoverEnter();
+        }
+        else if (!isHovered && wasHovered)
+        {
+            OnHoverExit();
+        }
+    }
+
+    void OnHoverEnter() // Визуальная VX наведение
+    {
+        
+        _VXMaterial.SetSize(0.0001f);
+
+
+
+    }
+
+    void OnHoverExit() // Убираем визуальные VX эффекты
+    {
+        
+        _VXMaterial.SetSize(0f);
+    }
+
     void CheckForPickUpInput()
     {
-        if (Input.GetMouseButtonDown(0) && !isDragged)
+        if (Input.GetMouseButtonDown(0) && !isDragged && isHovered)
         {
             TryPickUpItem();
         }
@@ -57,11 +98,9 @@ public class DragItem : MonoBehaviour
 
     void TryPickUpItem()
     {
-        Collider[] playersInRange = Physics.OverlapSphere(transform.position, pickUpRadius, playerLayer);
-
-        if (playersInRange.Length > 0)
+        if (isHovered && hoverResults[0] != null)
         {
-            playerTransform = playersInRange[0].transform;
+            playerTransform = hoverResults[0].transform;
 
             HoldPoint holder = playerTransform.GetComponentInChildren<HoldPoint>();
             if (holder != null && holder.holdPoint != null)
@@ -76,7 +115,6 @@ public class DragItem : MonoBehaviour
     {
         isDragged = true;
 
-        // Отменяем таймер если он активен
         if (isTimerActive)
         {
             CancelTimer();
@@ -101,7 +139,6 @@ public class DragItem : MonoBehaviour
         }
         else
         {
-
             transform.position = holdPoint.position;
             dragVelocity = Vector3.zero;
         }
@@ -116,27 +153,21 @@ public class DragItem : MonoBehaviour
         {
             rb.isKinematic = false;
             rb.useGravity = true;
-
-
             rb.linearVelocity = dragVelocity;
         }
 
         playerTransform = null;
         holdPoint = null;
-
-
         OnRelease();
     }
 
     void OnPickUp()
     {
-        // Отменяем таймер при поднятии предмета
         CancelTimer();
     }
 
     void OnRelease()
     {
-        // Запускаем таймер при отпускании предмета
         StartTimer();
     }
 
@@ -159,11 +190,8 @@ public class DragItem : MonoBehaviour
             rb.isKinematic = true;
             rb.useGravity = false;
         }
-
-        // Останавливаем таймер
         CancelTimer();
     }
-
 
     void OnDrawGizmosSelected()
     {

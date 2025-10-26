@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5523724197371422678}
   - component: {fileID: 847711606244376522}
   - component: {fileID: 6586391959728615794}
+  - component: {fileID: 1705288139682529863}
   m_Layer: 0
   m_Name: Loot
   m_TagString: Untagged
@@ -45,17 +46,17 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 65536
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.2501185, y: 0.9294078, z: 0.48685753}
-  m_Center: {x: 0.0069521666, y: 0.0024400055, z: 0.15974253}
+  m_Center: {x: 0.0069521666, y: 0.0024400055, z: -0.05}
 --- !u!114 &847711606244376522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,6 +75,7 @@ MonoBehaviour:
     m_Bits: 65536
   holdPoint: {fileID: 0}
   pickUpSmoothTime: 0.2
+  _VXMaterial: {fileID: 1705288139682529863}
 --- !u!54 &6586391959728615794
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -82,7 +84,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771841874323017576}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -101,6 +103,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1705288139682529863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771841874323017576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fac9701bebacba4e9ddd47062dfe5cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetMaterial: {fileID: 2100000, guid: a04c50f5e83c0b847bdc4ebf0981088e, type: 2}
+  sizePropertyName: _Size
+  sizeValue: 0
 --- !u!1001 &9069012509928250813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -149,6 +166,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7047841582242990846, guid: c142b330786761d42993d13de1f3759d, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7047841582242990846, guid: c142b330786761d42993d13de1f3759d, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a04c50f5e83c0b847bdc4ebf0981088e, type: 2}
     - target: {fileID: 8020111824377324312, guid: c142b330786761d42993d13de1f3759d, type: 3}
       propertyPath: m_Name
       value: SM_Book_01_Pref
