@@ -6,7 +6,9 @@ public class DragItem : MonoBehaviour
     [SerializeField] private LayerMask playerLayer = 1;
     [SerializeField] private Transform holdPoint;
     [SerializeField] private float pickUpSmoothTime = 0.2f;
+
     [SerializeField] private SpecificMaterialChanger _VXMaterial;
+    [SerializeField] private float chancheSize;
 
 
     private bool isDragged = false;
@@ -76,7 +78,7 @@ public class DragItem : MonoBehaviour
     void OnHoverEnter() // Визуальная VX наведение
     {
         
-        _VXMaterial.SetSize(0.0001f);
+        _VXMaterial.SetSize(chancheSize);
 
 
 

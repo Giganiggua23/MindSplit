@@ -19,7 +19,6 @@ public class SpecificMaterialChanger : MonoBehaviour
         if (targetMaterial != null && targetMaterial.HasProperty(sizePropertyName))
         {
             targetMaterial.SetFloat(sizePropertyName, sizeValue);
-            Debug.Log($"Size changed to: {sizeValue} on material: {targetMaterial.name}");
         }
     }
 
