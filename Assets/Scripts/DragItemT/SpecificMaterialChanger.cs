@@ -1,13 +1,14 @@
 using UnityEngine;
+using System;
 
 public class SpecificMaterialChanger : MonoBehaviour
 {
     [Header("Target Material")]
     [SerializeField] private Material targetMaterial;
-    [SerializeField] private string sizePropertyName = "_Size";
+    [SerializeField] private string sizePropertyName = "_OnOff";
 
-    [Header("Size Settings")]
-    [SerializeField] private float sizeValue = 0f;
+    [Header("Branch Settings")]
+    [SerializeField] private float TurnBranch = 0f;
 
     void Start()
     {
@@ -18,14 +19,15 @@ public class SpecificMaterialChanger : MonoBehaviour
     {
         if (targetMaterial != null && targetMaterial.HasProperty(sizePropertyName))
         {
-            targetMaterial.SetFloat(sizePropertyName, sizeValue);
+            targetMaterial.SetFloat(sizePropertyName, TurnBranch);
         }
     }
 
 
-    public void SetSize(float newSize) //Для других скриптов
+    public void SetOutLine(bool Branch) //Для других скриптов, true false использовать 
     {
-        sizeValue = newSize;
+        TurnBranch = Convert.ToSingle(Branch); ;
         ApplySize();
     }
 }
+

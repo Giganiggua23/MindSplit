@@ -24,7 +24,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BrokenWoodOutLine
-  m_Shader: {fileID: -6465566751694194690, guid: 342afe0135fb8a44bafa6f6a3d54d1c0, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 0c0a15ed4d708564f9a52cb97617bad9, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -214,6 +214,7 @@ Material:
     - _NormalScale: 1
     - _ObjectSpaceUVMapping: 0
     - _ObjectSpaceUVMappingEmissive: 0
+    - _OnOff: 0
     - _OpaqueCullMode: 1
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
@@ -221,11 +222,13 @@ Material:
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
     - _PerPixelSorting: 0
+    - _Power: 1
     - _RayTracing: 0
     - _ReceivesSSR: 1
     - _ReceivesSSRTransparent: 0
     - _RefractionModel: 0
     - _RenderQueueType: 6
+    - _Scale_Size: 1.02
     - _Size: 0
     - _Smoothness: 0.5
     - _SmoothnessRemapMax: 1
@@ -264,10 +267,14 @@ Material:
     - _UVEmissive: 0
     - _UseEmissiveIntensity: 0
     - _UseShadowThreshold: 0
+    - _VectorBranch: 0
+    - _X_Vector: 1.1
+    - _Y_Vector: 1.08
     - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 4
     - _ZTestTransparent: 4
     - _ZWrite: 0
+    - _Z_Vector: 1.01
     - _freshnel: 10
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}

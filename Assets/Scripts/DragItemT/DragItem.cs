@@ -8,7 +8,7 @@ public class DragItem : MonoBehaviour
     [SerializeField] private float pickUpSmoothTime = 0.2f;
 
     [SerializeField] private SpecificMaterialChanger _VXMaterial;
-    [SerializeField] private float chancheSize;
+    
 
 
     private bool isDragged = false;
@@ -23,7 +23,7 @@ public class DragItem : MonoBehaviour
 
     // Для определения наведения
     private bool isHovered = false;
-    private Collider[] hoverResults = new Collider[1]; // Оптимизация для OverlapSphereNonAlloc
+    private Collider[] hoverResults = new Collider[1];
 
     void Start()
     {
@@ -32,7 +32,7 @@ public class DragItem : MonoBehaviour
 
     void Update()
     {
-        CheckForHover(); // Проверяем наведение каждый кадр
+        CheckForHover(); 
         CheckForPickUpInput();
 
         if (isDragged)
@@ -60,11 +60,9 @@ public class DragItem : MonoBehaviour
     {
         bool wasHovered = isHovered;
 
-        // Проверяем есть ли игрок в радиусе
         int playersCount = Physics.OverlapSphereNonAlloc(transform.position, pickUpRadius, hoverResults, playerLayer);
         isHovered = playersCount > 0;
 
-        // Вызываем события при изменении состояния наведения
         if (isHovered && !wasHovered)
         {
             OnHoverEnter();
@@ -78,7 +76,7 @@ public class DragItem : MonoBehaviour
     void OnHoverEnter() // Визуальная VX наведение
     {
         
-        _VXMaterial.SetSize(chancheSize);
+        _VXMaterial.SetOutLine(true);
 
 
 
@@ -87,7 +85,7 @@ public class DragItem : MonoBehaviour
     void OnHoverExit() // Убираем визуальные VX эффекты
     {
         
-        _VXMaterial.SetSize(0f);
+        _VXMaterial.SetOutLine(false);
     }
 
     void CheckForPickUpInput()

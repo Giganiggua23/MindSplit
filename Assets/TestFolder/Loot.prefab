@@ -76,6 +76,7 @@ MonoBehaviour:
   holdPoint: {fileID: 0}
   pickUpSmoothTime: 0.2
   _VXMaterial: {fileID: 1705288139682529863}
+  chancheSize: 0.0001
 --- !u!54 &6586391959728615794
 Rigidbody:
   m_ObjectHideFlags: 0
