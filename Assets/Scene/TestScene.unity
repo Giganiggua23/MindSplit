@@ -127,6 +127,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1342038720416764676, guid: 27fdf4f63cf90804ca6552232aa6cea5, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342038720416764676, guid: 27fdf4f63cf90804ca6552232aa6cea5, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ad010ac3c404bfe4f98836d103d8ba5b, type: 2}
     - target: {fileID: 4068411772302156993, guid: 27fdf4f63cf90804ca6552232aa6cea5, type: 3}
       propertyPath: m_Name
       value: SM_BookShelf_01_Pref
@@ -579,7 +587,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &726465716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -863,7 +871,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 18115ae9f4b42fe43b59149e13e03df7, type: 2}
+  - {fileID: 2100000, guid: ad010ac3c404bfe4f98836d103d8ba5b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
