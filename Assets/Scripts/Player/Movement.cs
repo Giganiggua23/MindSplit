@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class Movement : PlayerStateManager
 {
     public CharacterController controller;
 
@@ -14,17 +14,6 @@ public class Movement : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
-
-
-
-    [SerializeField] ScriptAnim _scriptAnim;
-
-
-    public bool IsUse_Movement;
-
-    bool _walk;
-    public bool isRunning;
-
 
     //SFX
 
@@ -41,9 +30,6 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-
-        _scriptAnim.AWalk(_walk);
-
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         isGroundedStone = Physics.CheckSphere(groundCheck.position, groundDistance, groundMaskStone);
@@ -55,19 +41,18 @@ public class Movement : MonoBehaviour
         }
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-        _walk = (Mathf.Abs(x) > 0.4f || Mathf.Abs(z) > 0.4f);
+        AWalk((Mathf.Abs(x) > 0.4f || Mathf.Abs(z) > 0.4f));
 
-        
 
-        if (x == 1 && Input.GetKey(KeyCode.LeftShift) || z == 1 && Input.GetKey(KeyCode.LeftShift) || x == -1 && Input.GetKey(KeyCode.LeftShift))
+        if (x == 1 && Input.GetKey(KeyCode.LeftShift) || z == 1 && Input.GetKey(KeyCode.LeftShift) || x == -1 && Input.GetKey(KeyCode.LeftShift) && !_IsUse)
         {
             
             if (isGrounded)
             {
                 speed = 10f;
-                
 
-                isRunning = true;
+
+                _isRunning = true;
             }
             else
             {
@@ -81,21 +66,20 @@ public class Movement : MonoBehaviour
             if (isGrounded)
             {
                 speed = 8f;
-                isRunning = false;
             }
             else
             {
                 speed = 5f;
-                isRunning = false;
             }
+            _isRunning = false;
 
         }
-        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S) && _aWalk)
         {
-            speed = speed / 1.3f;
+            speed = speed / 1.3f ;
         }
 
-        if (IsUse_Movement)
+        if (_IsUse)
         {
             speed = 0;
         }
@@ -105,7 +89,7 @@ public class Movement : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime);
 
-        if (Input.GetButton("Jump") && isGrounded && !IsUse_Movement)
+        if (Input.GetButton("Jump") && isGrounded && !_IsUse)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * _gravity);
 
@@ -115,7 +99,7 @@ public class Movement : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
 
-        if (_walk && isGrounded)
+        if (_aWalk && isGrounded)
         {
             stepTimer += Time.deltaTime;
             if (stepTimer >= 0.45f && isGroundedStone)
@@ -152,8 +136,4 @@ public class Movement : MonoBehaviour
             audioSource.PlayOneShot(randomClip, 0.35f);
         }
     }
-
-
-
-
 }

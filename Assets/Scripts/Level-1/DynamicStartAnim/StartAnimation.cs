@@ -17,7 +17,11 @@ public class StartAnimation : MonoBehaviour
 
     private Coroutine cameraCoroutine;
 
-    
+
+
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip audioClip;
+
     void Start()
     {
         
@@ -29,6 +33,8 @@ public class StartAnimation : MonoBehaviour
     {
         CameraReal1.SetActive(!_switch);
         CameraReal2.SetActive(_switch);
+
+        audioSource.PlayOneShot(audioClip, 0.5f);
     }
     
     public void EndAnimation()
@@ -95,7 +101,7 @@ public class StartAnimation : MonoBehaviour
 
 
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.01f);
         EndAnimation();
     }
 }

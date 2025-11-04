@@ -25,10 +25,10 @@ public class ChestCodeLockTrigger : MonoBehaviour
     void ActiveCodeLock()
     {
         _codeLockLogic.isUseCodeLock = !_codeLockLogic.isUseCodeLock;
-        _movement.IsUse_Movement = !_movement.IsUse_Movement;
-        anim.SetBool("IsuseCam", _movement.IsUse_Movement);
+        _movement.PlayerUseObj(!_movement._IsUse);
+        anim.SetBool("IsuseCam", _movement._IsUse);
 
-        if (_movement.IsUse_Movement == true)
+        if (_movement._IsUse == true)
         {
             anim.SetTrigger("Use");
         }
