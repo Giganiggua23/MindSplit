@@ -819,6 +819,8 @@ MonoBehaviour:
   isMovingUp: 0
   isMoving: 0
   progress: 0
+  OnActive: 0
+  InsAnimBranch: 0
 --- !u!4 &988142080 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -5667377421145659195, guid: 0d3fc4df84785424788ad93f277159db, type: 3}
@@ -1656,7 +1658,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1902214360
 Transform:
   m_ObjectHideFlags: 0

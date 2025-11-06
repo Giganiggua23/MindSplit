@@ -341,7 +341,6 @@ GameObject:
   - component: {fileID: 3584672749363429686}
   - component: {fileID: 7024420350808790130}
   - component: {fileID: 864305138721016327}
-  - component: {fileID: 5953205347859573344}
   - component: {fileID: 2106703202484940758}
   - component: {fileID: 3747161242231252390}
   - component: {fileID: 2501184655583382403}
@@ -465,19 +464,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthPlayer: 3
---- !u!114 &5953205347859573344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1301609367361332206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb41878e9ea81a448a5295625f783ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 4723337359560064950}
 --- !u!114 &2106703202484940758
 MonoBehaviour:
   m_ObjectHideFlags: 0

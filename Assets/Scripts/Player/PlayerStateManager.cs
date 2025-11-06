@@ -32,15 +32,16 @@ public class PlayerStateManager : MonoBehaviour  // Состояния персонажа и его ан
     public void PlayerUseObj(bool active)
     {
         _IsUse = active;
-        _aWalk = !active;
-
-
-        
+        _aWalk = !active;   
     }
 
     public void AWalk(bool active)
     {
-        anim.SetBool("IsWalk", active);
-        _aWalk = active;
+        if (!_IsUse)
+        {
+            anim.SetBool("IsWalk", active);
+            _aWalk = active;
+        }
+        
     }
 }
