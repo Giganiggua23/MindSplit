@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 907549905087637156}
   - component: {fileID: 6046978697783349384}
+  - component: {fileID: 2884482166246748807}
   m_Layer: 0
   m_Name: CodeLock
   m_TagString: Untagged
@@ -57,6 +58,21 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   ChangeNumber: {fileID: 0}
   OpenCodeLock: {fileID: 0}
+--- !u!114 &2884482166246748807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3292940014616165202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fac9701bebacba4e9ddd47062dfe5cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetMaterial: {fileID: 0}
+  sizePropertyName: _OnOff
+  TurnBranch: 0
 --- !u!1001 &4017872130563990507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -122,9 +138,17 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 927483827038725020, guid: 080e28a341bbf6543a2f943e0d210cbd, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 927483827038725020, guid: 080e28a341bbf6543a2f943e0d210cbd, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7e1cdd15bc5abbf428b70348485a30a9, type: 2}
+    - target: {fileID: 927483827038725020, guid: 080e28a341bbf6543a2f943e0d210cbd, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 989b4e0d6a0a38a4fb574b547dbb82f6, type: 2}
     - target: {fileID: 5905600536060159308, guid: 080e28a341bbf6543a2f943e0d210cbd, type: 3}
       propertyPath: m_RenderingLayerMask
       value: 2
