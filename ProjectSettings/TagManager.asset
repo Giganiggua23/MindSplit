@@ -4,10 +4,11 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Buttons
-  - ButtonLMB
   - Button Mouse
   - HalmActive
+  - Button_E
+  - Button_LMB
+  - Buttons
   layers:
   - Default
   - TransparentFX
@@ -31,7 +32,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Chain
   - 
   - 
   - 

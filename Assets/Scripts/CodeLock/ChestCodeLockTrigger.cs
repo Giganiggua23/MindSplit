@@ -4,7 +4,7 @@ public class ChestCodeLockTrigger : MonoBehaviour
 {
     [SerializeField] CodeLockLogic _codeLockLogic;
     [SerializeField] bool OnTriggerStay;
-    [SerializeField] Movement _movement;
+    [SerializeField] PlayerStateManager _playerStateManager;
     [SerializeField] Animator anim;
 
     void Update()
@@ -25,10 +25,10 @@ public class ChestCodeLockTrigger : MonoBehaviour
     void ActiveCodeLock()
     {
         _codeLockLogic.isUseCodeLock = !_codeLockLogic.isUseCodeLock;
-        _movement.PlayerUseObj(!_movement._IsUse);
-        anim.SetBool("IsuseCam", _movement._IsUse);
+        _playerStateManager.PlayerUseObj(!_playerStateManager._IsUse);
+        anim.SetBool("IsuseCam", _playerStateManager._IsUse);
 
-        if (_movement._IsUse == true)
+        if (_playerStateManager._IsUse == true)
         {
             anim.SetTrigger("Use");
         }

@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    [SerializeField] TutorialManager _tutorialManager;
+
     [SerializeField] GameObject Settings;
     [SerializeField] GameObject Credits;
     [SerializeField] GameObject YES;
@@ -17,6 +19,9 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
+        if (IsGame && _tutorialManager == null)
+            _tutorialManager = GameObject.Find("Items").GetComponent<TutorialManager>();
+        
         if (Settings != null)
             Settings.SetActive(false);
 
@@ -30,12 +35,41 @@ public class MenuManager : MonoBehaviour
             GameMenu.SetActive(false);
     }
 
+            /* === Play === */
+
+    public void ButtonNewGamePlay()         // —цена с комиксом, после загрузка тыры пыры
+    {
+        _tutorialManager.ResetAllQuests();
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(1);
+        
+
+        //DataLoad
+
+        
+    }
+
+    public void ButtonLastGamePlay()        // надо загружать сцену игры (скорей всего сцену загрузки котора€ уходит в игру)
+    {
+        _tutorialManager.LoadAllQuest();
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(3);
+        
+
+        //DataLoad
+
+        
+    }
 
     public void ButtonPlay()
     {
         SceneManager.LoadScene(1);
         Time.timeScale = 1f;
     }
+
+
+            /* === Settings === */
+
 
     public void ButtonSettings()
     {
@@ -47,9 +81,12 @@ public class MenuManager : MonoBehaviour
         Credits.SetActive(!Credits.activeSelf);
     }
 
+            /* === Exit === */
+
     public void ButtonExitToMenu()
     {
         SceneManager.LoadScene(0);
+        _tutorialManager.SaveAllQuests();
     }
 
     public void ButtonExit()
@@ -61,6 +98,8 @@ public class MenuManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+            /* === GameMenu === */
 
     public void ReturnToGame()
     {
@@ -79,16 +118,19 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+            /* === ALL === */
+
 
     void Update()
     {
         if (IsGame && Input.GetKeyDown(KeyCode.Escape))
         {
+            _tutorialManager.SaveAllQuests();
             ReturnToGame();
         }
             
 
-        if (IsDieMenu && Input.GetKeyDown(KeyCode.Space))
+        if (IsDieMenu && Input.anyKeyDown)
         {
             SceneManager.LoadScene(0);
             Cursor.lockState = CursorLockMode.None;

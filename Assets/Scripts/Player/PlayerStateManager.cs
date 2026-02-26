@@ -3,18 +3,27 @@ using UnityEngine;
 public class PlayerStateManager : MonoBehaviour  // Состояния персонажа и его анимации
 {
 
+    //===== Обращение к скриптам 
+
+    [SerializeField] private MouseLock _mouseLock;
+    [SerializeField] Movement _movement;
+
+
+
     [SerializeField] Animator anim;
 
 
 
     //===== - Состояния
 
-    protected bool _aWalk;
-    protected bool _isRunning;
+    public bool _aWalk { get;  set; }
+    public bool _isRunning { get; set; }
 
-    public bool _IsUse; 
+    public bool _IsUse { get; private set; }
 
-    //=====
+    //===== - Значения
+
+    
 
     void Start()
     {
@@ -39,9 +48,32 @@ public class PlayerStateManager : MonoBehaviour  // Состояния персонажа и его ан
     {
         if (!_IsUse)
         {
-            anim.SetBool("IsWalk", active);
+            _movement.speedPublic = 8f;
+           
             _aWalk = active;
+
+            if (anim != null)
+            {
+                anim.SetBool("IsWalk", active);
+            }
+        }
+        if (_IsUse)
+        {
+            if (anim != null)
+                anim.SetBool("IsWalk", false);
         }
         
+    }
+
+    public void ClosetUP(bool active, GameObject targetOBJ)
+    {
+        _IsUse = active;
+        _mouseLock._isUse_Camera = active;
+        
+        _mouseLock.LookAtObj(targetOBJ);
+        _movement.speedPublic = 2f;
+
+
+
     }
 }

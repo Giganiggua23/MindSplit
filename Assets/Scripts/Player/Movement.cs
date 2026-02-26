@@ -1,10 +1,14 @@
 using UnityEngine;
 
-public class Movement : PlayerStateManager
+public class Movement : MonoBehaviour
 {
+    [SerializeField] PlayerStateManager _playerStateManager;
+
+
     public CharacterController controller;
 
-    [SerializeField] private float speed = 8f;
+    [SerializeField] private float speed;
+    [SerializeField] public float speedPublic = 8f;   //публ скорость, менять
     private float _gravity = -19.62f;
     [SerializeField] private float jumpHeight = 2f;
 
@@ -12,10 +16,14 @@ public class Movement : PlayerStateManager
     private float groundDistance = 0.4f;
     [SerializeField] private LayerMask groundMask;
 
+
+    float speedPercent;
+
+
     Vector3 velocity;
     bool isGrounded;
 
-    //SFX
+    //SFX ===
 
     [SerializeField] private LayerMask groundMaskStone;
     bool isGroundedStone;
@@ -28,8 +36,17 @@ public class Movement : PlayerStateManager
 
     float stepTimer = 0;
 
+
+
+    //SmothTo ===
+
+    private Vector3 _moveTarget;
+    
+
     void Update()
     {
+       
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         isGroundedStone = Physics.CheckSphere(groundCheck.position, groundDistance, groundMaskStone);
@@ -41,22 +58,20 @@ public class Movement : PlayerStateManager
         }
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-        AWalk((Mathf.Abs(x) > 0.4f || Mathf.Abs(z) > 0.4f));
+        _playerStateManager.AWalk((Mathf.Abs(x) > 0.4f || Mathf.Abs(z) > 0.4f));
 
-
-        if (x == 1 && Input.GetKey(KeyCode.LeftShift) || z == 1 && Input.GetKey(KeyCode.LeftShift) || x == -1 && Input.GetKey(KeyCode.LeftShift) && !_IsUse)
+        if (x == 1 && Input.GetKey(KeyCode.LeftShift) && !_playerStateManager._IsUse || z == 1 && Input.GetKey(KeyCode.LeftShift) && !_playerStateManager._IsUse || x == -1 && Input.GetKey(KeyCode.LeftShift) && !_playerStateManager._IsUse)
         {
             
             if (isGrounded)
             {
-                speed = 10f;
+                speed = speedPublic + Percent(speedPublic, 15f, speedPercent);
 
-
-                _isRunning = true;
+                _playerStateManager._isRunning = true;
             }
             else
             {
-                speed = 6f;
+                speed = speedPublic - Percent(speedPublic, 20f, speedPercent);
             }
 
 
@@ -65,23 +80,18 @@ public class Movement : PlayerStateManager
         {
             if (isGrounded)
             {
-                speed = 8f;
+                speed = speedPublic;
             }
             else
             {
-                speed = 5f;
+                speed = speedPublic - Percent(speedPublic, 50f, speedPercent);
             }
-            _isRunning = false;
+            _playerStateManager._isRunning = false;
 
         }
-        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S) && _aWalk)
+        if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S) && _playerStateManager._aWalk)
         {
-            speed = speed / 1.3f ;
-        }
-
-        if (_IsUse)
-        {
-            speed = 0;
+            speed = speedPublic / 1.3f ;
         }
 
 
@@ -89,7 +99,7 @@ public class Movement : PlayerStateManager
 
         controller.Move(move * speed * Time.deltaTime);
 
-        if (Input.GetButton("Jump") && isGrounded && !_IsUse)
+        if (Input.GetButton("Jump") && isGrounded && !_playerStateManager._IsUse)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * _gravity);
 
@@ -99,7 +109,10 @@ public class Movement : PlayerStateManager
 
         controller.Move(velocity * Time.deltaTime);
 
-        if (_aWalk && isGrounded)
+
+
+
+        if (_playerStateManager._aWalk && isGrounded)
         {
             stepTimer += Time.deltaTime;
             if (stepTimer >= 0.45f && isGroundedStone)
@@ -115,7 +128,10 @@ public class Movement : PlayerStateManager
 
             }
         }
+
     }
+
+    
 
     // SFX
 
@@ -135,5 +151,13 @@ public class Movement : PlayerStateManager
             AudioClip randomClip = WoodWalkSoundsClips[Random.Range(0, WoodWalkSoundsClips.Length)];
             audioSource.PlayOneShot(randomClip, 0.35f);
         }
+    }
+
+
+    float Percent(float n, float percent, float outparam)
+    {
+        outparam = n / 100 * percent;
+
+        return outparam;
     }
 }

@@ -19,7 +19,7 @@ public class Collect : MonoBehaviour
     private void Update()
     {
         
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
         {
             ActivateNextImage();
         }
@@ -37,7 +37,7 @@ public class Collect : MonoBehaviour
         else
         {
 
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
 
         }
     }
