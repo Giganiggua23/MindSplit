@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class UseHammer : MonoBehaviour
 {
@@ -7,8 +8,15 @@ public class UseHammer : MonoBehaviour
     [SerializeField] private LayerMask hitLayers = -1; 
     [SerializeField] private Vector3 rayOffset = Vector3.zero; // —мещение луча относительно источника
 
+    [SerializeField] private bool IsAttack;
+    private Animator animator;
+
+    [SerializeField] private GameObject _onePart;
+    [SerializeField] private GameObject _theePart;
+
     private void Start()
     {
+        animator = GetComponent<Animator>();
         if (raycastSource == null)
         {
             Debug.LogError("»сточник луча (raycastSource) не назначен в инспекторе!");
@@ -17,11 +25,14 @@ public class UseHammer : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !IsAttack)
         {
-            FireRaycast();
+            animator.SetTrigger("AttackTrig");
         }
     }
+
+    
+
 
     public void FireRaycast()
     {
@@ -42,5 +53,12 @@ public class UseHammer : MonoBehaviour
             }
         }
     }
+
+    
+
 }
+
+/*
+ * ѕри анимации указывать метод FireRaycast() дл€ активации удара
+ */
 

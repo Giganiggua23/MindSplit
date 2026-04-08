@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerStateManager : MonoBehaviour  // Состояния персонажа и его анимации
 {
+    public static PlayerStateManager Instance { get; set; }
+
 
     //===== Обращение к скриптам 
 
@@ -23,6 +25,10 @@ public class PlayerStateManager : MonoBehaviour  // Состояния персонажа и его ан
 
     //===== - Значения
 
+    void Awake()
+    {
+        Instance = this;
+    }
     
 
     void Start()
@@ -75,5 +81,19 @@ public class PlayerStateManager : MonoBehaviour  // Состояния персонажа и его ан
 
 
 
+    }
+
+    public void ItemUse(bool active)
+    {
+        _IsUse = active;
+    }
+
+
+    void OnDestroy()
+    {
+        if(Instance == this)
+        {
+            Instance = null;
+        }
     }
 }
