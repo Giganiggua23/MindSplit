@@ -16,10 +16,15 @@ public class PlateLogic : MonoBehaviour
     [SerializeField] private Material _plateMaterialGrey;
 
 
+    [SerializeField] Animator _anim;
+
 
     void Start()
     {
         meshRenderer.material = _plateMaterialGrey;
+
+        _anim.SetBool("_ifNigative", _negativePlate);
+        _anim.SetBool("_ifNeitral", _neitralTrapPlate);
     }
 
     void OnTriggerEnter(Collider other)
@@ -55,14 +60,17 @@ public class PlateLogic : MonoBehaviour
     }
 
 
-    void NegativePlate() // RED
+    void NegativePlate() // RED     Fire
     {
         meshRenderer.material = _plateMaterialRed;
+        _anim.SetTrigger("Activeted");
     }
 
-    void NeitralTrapPlate() // YELLOW
+    void NeitralTrapPlate() // YELLOW   Pics
     {
         meshRenderer.material = _plateMaterialYellow;
+
+        _anim.SetTrigger("Activeted");
 
     }
 
@@ -72,11 +80,6 @@ public class PlateLogic : MonoBehaviour
     }
     
 }
-
-
-
-
-
 
 
 
