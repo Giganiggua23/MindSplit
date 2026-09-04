@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlateLogic : MonoBehaviour
 {
@@ -13,11 +14,15 @@ public class PlateLogic : MonoBehaviour
     [SerializeField] private Material _plateMaterialYellow;
     [SerializeField] private Material _plateMaterialGreen;
 
+    private Material _redPlate;
+
+    private Material _yellowPlate;
+
     [SerializeField] private Material _plateMaterialGrey;
 
 
     [SerializeField] Animator _anim;
-
+    
 
     void Start()
     {
@@ -25,6 +30,7 @@ public class PlateLogic : MonoBehaviour
 
         _anim.SetBool("_ifNigative", _negativePlate);
         _anim.SetBool("_ifNeitral", _neitralTrapPlate);
+      
     }
 
     void OnTriggerEnter(Collider other)
@@ -33,12 +39,24 @@ public class PlateLogic : MonoBehaviour
         {
             if (_negativePlate)
             {
-                NegativePlate();
+                if (_redPlate == null)
+                {
+                    _redPlate = new Material(_plateMaterialYellow);
+                    meshRenderer.material = _redPlate;
+
+                }
+                StartCoroutine(NegativePlate());
             }
 
             if (_neitralTrapPlate)
             {
-                NeitralTrapPlate();
+                if (_yellowPlate == null)
+                {
+                    _yellowPlate = new Material(_plateMaterialYellow);
+                    meshRenderer.material = _yellowPlate;
+                }
+
+                StartCoroutine(NeitralTrapPlate());
             }
 
             if (_positivePlate)
@@ -60,15 +78,23 @@ public class PlateLogic : MonoBehaviour
     }
 
 
-    void NegativePlate() // RED     Fire
+    IEnumerator NegativePlate() // RED     Fire
     {
-        meshRenderer.material = _plateMaterialRed;
+        _redPlate.color = new Color(1f, 0.647f, 0f);
+
+        yield return new WaitForSeconds(1);
+
+        _redPlate.color = new Color(1f, 0f, 0f);
         _anim.SetTrigger("Activeted");
     }
 
-    void NeitralTrapPlate() // YELLOW   Pics
+    IEnumerator NeitralTrapPlate() // YELLOW   Pics
     {
-        meshRenderer.material = _plateMaterialYellow;
+        _yellowPlate.color = new Color(1f, 1f, 0f);
+
+        yield return new WaitForSeconds(1);
+
+        _yellowPlate.color = new Color(1f, 0.647f, 0f);
 
         _anim.SetTrigger("Activeted");
 
